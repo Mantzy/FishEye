@@ -146,4 +146,46 @@ footer {
     font-size: 17px;
     flex-direction: row;
     display: flex;
+    width: 100%;
+}
+
+
+/* photo list */
+
+.img-title {
+    font-size: 24px;
+}
+
+.photo-list {
+    max-width: 350px;
+    max-height: 300px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.list-img {
+    max-width: 350px;
+    margin-top: -50px;
+}
+
+.photo-infos {
+    display: flex;
+}
+
+.likes {
+    flex-grow: 1;
+    align-items: flex-end;
+}
+
+.img-title {
+    flex-grow: 1;
+}
+
+#img-listing {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.photo-card {
+    width: 30%;
 }
