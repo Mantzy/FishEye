@@ -1,0 +1,149 @@
+.wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    border: 3px solid black;
+    padding: 15px 15px;
+    color: #901C1C !important;
+}
+
+.wrapper>* {
+    flex: 1 100%;
+}
+
+
+/* Header part */
+
+header {
+    border: 2px solid red;
+    padding: 15px 15px;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+#navigation {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+#banner {
+    flex-grow: 1;
+}
+
+.nav-tag {
+    display: inline;
+    border: 1px solid #901C1C;
+    padding: 5px;
+    border-radius: 25px;
+    flex-grow: 2;
+}
+
+#photographers {
+    font-size: 30px;
+    font-weight: bolder;
+    flex-grow: 1;
+    text-align: center;
+}
+
+body {
+    border: 2px solid blue;
+    padding: 15px 15px;
+}
+
+
+/* Footer part */
+
+footer {
+    border: 2px solid green;
+    padding: 15px 15px;
+}
+
+
+/* Main part */
+
+.main {
+    border: 2px solid yellow;
+    padding: 15px 15px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.thumbnail {
+    text-align: center;
+    position: relative;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin: auto;
+    display: block;
+}
+
+.thumbnail-img {
+    max-width: 300px;
+    margin-top: -40%;
+    margin-left: -20%;
+}
+
+.photog-card {
+    text-align: center;
+    width: 30%;
+}
+
+.photog-page-link {
+    list-style: none;
+    color: #901C1C !important;
+    text-decoration: none;
+}
+
+.price {
+    color: #525252;
+    font-size: small;
+}
+
+.photog-description {
+    color: black;
+}
+
+
+/* photographer page */
+
+.photog-info {
+    background-color: #FAFAFA;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    border-radius: 5px;
+}
+
+#personal-info {
+    flex-grow: 2;
+    width: 30%;
+}
+
+#contact {
+    flex-grow: 2;
+    width: 30%;
+}
+
+.infopage {}
+
+.contact-btn {
+    padding: 15px 15px;
+    background-color: #901C1C;
+    width: 170px;
+    height: 69px;
+    color: white;
+    border-radius: 5px;
+    font-size: 20px;
+    outline: none;
+    border: 0;
+}
+
+#photo-order {
+    font-size: 17px;
+    flex-direction: row;
+    display: flex;
+}
