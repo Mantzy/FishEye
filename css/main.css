@@ -156,6 +156,11 @@ footer {
     cursor: pointer;
 }
 
+.modal-btn:hover {
+    background-color: #DB8876;
+    color: black;
+}
+
 #photo-order {
     font-size: 17px;
     flex-direction: row;
