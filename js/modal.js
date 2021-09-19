@@ -4,8 +4,8 @@ const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
 const modalClose = document.querySelectorAll(".close");
 //const modalSuc = document.querySelectorAll(".bgSubmit");
-const modalSucClose = document.getElementById("sucClose");
-const modalSucBtn = document.getElementById("submit-success");
+
+const modalPicture = document.getElementById("single-img-container");
 
 
 // launch modal event
@@ -33,3 +33,6 @@ modalSucBtn.addEventListener("click", function() {
 modalSucClose.addEventListener("click", function() {
     setTimeout(function() { window.location.reload(); }, 2)
 })
+
+
+//single picture
