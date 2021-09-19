@@ -168,6 +168,26 @@ footer {
     width: 100%;
 }
 
+#price {
+    color: black;
+    position: fixed;
+    right: 20px;
+    bottom: 0px;
+    min-width: 250px;
+    height: 40px;
+    background-color: #DB8876;
+    padding: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    display: flex;
+}
+
+.bottom {
+    text-align: center;
+    flex-grow: 1;
+    margin: auto;
+}
+
 
 /* photo list */
 
