@@ -227,6 +227,7 @@ footer {
 
 .photo-card {
     width: 30%;
+    cursor: pointer;
 }
 
 
@@ -385,6 +386,7 @@ input {
     width: 100%;
     height: 100%;
     background-color: #E5E5E5;
+    display: none;
 }
 
 .single-img-bg {

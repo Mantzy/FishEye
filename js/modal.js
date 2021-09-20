@@ -5,7 +5,8 @@ const formData = document.querySelectorAll(".formData");
 const modalClose = document.querySelectorAll(".close");
 //const modalSuc = document.querySelectorAll(".bgSubmit");
 
-const modalPicture = document.getElementById("single-img-container");
+const modalPicture = document.getElementById("single-img");
+const modalPictureCard = document.getElementById("photo-card");
 
 
 // launch modal event
@@ -25,14 +26,20 @@ function closeModal() {
 
 }
 
-//close submit success page
-modalSucBtn.addEventListener("click", function() {
+/*modalSucBtn.addEventListener("click", function() {
     setTimeout(function() { window.location.reload(); }, 2)
 })
 
 modalSucClose.addEventListener("click", function() {
     setTimeout(function() { window.location.reload(); }, 2)
-})
+})*/
 
 
 //single picture
+modalPictureCard.addEventListener("click", function() {
+    modalPicture.style.display = "block";
+});
+
+modalPicture.addEventListener("click", function() {
+    modalPicture.style.display = "block";
+});
