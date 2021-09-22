@@ -7,6 +7,7 @@ const modalClose = document.querySelectorAll(".close");
 
 const modalPicture = document.getElementById("single-img");
 const modalPictureCard = document.getElementById("photo-card");
+const modalCloseDark = document.getElementById("dark-color-close");
 
 
 // launch modal event
@@ -42,4 +43,9 @@ modalPictureCard.addEventListener("click", function() {
 
 modalPicture.addEventListener("click", function() {
     modalPicture.style.display = "block";
+});
+
+//close single picture
+modalCloseDark.addEventListener("click", function() {
+    modalPicture.style.display = "none";
 });
