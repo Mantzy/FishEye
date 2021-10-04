@@ -1,0 +1,44 @@
+@media screen and (max-width: 400px) {
+    .main {
+        padding: 15px 15px;
+        display: flex;
+        flex-direction: column;
+    }
+    .photog-tags {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        font-size: 12px;
+    }
+    .photog-card {
+        width: 100%;
+    }
+    #banner {
+        flex-grow: 1;
+        order: 1;
+        max-width: 50%;
+        margin: 0 auto;
+    }
+    #photographers {
+        flex-grow: 1;
+        order: 2;
+        max-width: 50%;
+        font-size: 14px;
+    }
+    .sr-only {
+        flex-grow: 2;
+        order: 3;
+    }
+    #fishlogo {
+        max-width: 150px;
+    }
+    .wrapper {
+        padding: 0px 0px;
+    }
+    body {
+        padding: 0px 0px;
+    }
+    #navigation {
+        text-align: center;
+    }
+}

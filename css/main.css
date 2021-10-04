@@ -33,11 +33,12 @@ header {
 }
 
 .nav-tag {
-    display: inline;
+    display: inline-block;
     border: 1px solid #901C1C;
     padding: 5px;
     border-radius: 25px;
     flex-grow: 2;
+    margin: 5px 5px;
 }
 
 #photographers {
@@ -84,7 +85,7 @@ footer {
 
 .thumbnail-img {
     max-width: 300px;
-    margin-top: -40%;
+    /* margin-top: -40%;*/
     margin-left: -20%;
 }
 
