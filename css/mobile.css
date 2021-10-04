@@ -1,8 +1,12 @@
 @media screen and (max-width: 400px) {
     .main {
-        padding: 15px 15px;
+        padding: 0px 0px;
         display: flex;
         flex-direction: column;
+        max-width: 100%;
+    }
+    header {
+        padding: 15px 0px;
     }
     .photog-tags {
         display: flex;
@@ -17,7 +21,7 @@
         flex-grow: 1;
         order: 1;
         max-width: 50%;
-        margin: 0 auto;
+        margin: 0;
     }
     #photographers {
         flex-grow: 1;
@@ -40,5 +44,41 @@
     }
     #navigation {
         text-align: center;
+    }
+    #contact {
+        position: fixed;
+        right: 50%;
+        bottom: 20px;
+    }
+    #price {
+        display: none;
+    }
+    .thumbnail {
+        max-width: 150px;
+        max-height: 150px;
+    }
+    .thumbnail-img {
+        max-width: 200px;
+    }
+    .nav-tag {
+        font-weight: bolder;
+    }
+    #photo-order {
+        display: none;
+    }
+    #img-listing {
+        flex-flow: column;
+    }
+    .photo-card {
+        max-width: 330px;
+        width: 100%;
+        padding: 10px 10px;
+    }
+    .photo-list {
+        margin: 0 auto;
+        max-height: 200px;
+    }
+    .photo-infos {
+        margin-top: 10px;
     }
 }

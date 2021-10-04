@@ -215,6 +215,7 @@ footer {
 .likes {
     flex-grow: 1;
     align-items: flex-end;
+    text-align: right;
 }
 
 .img-title {
