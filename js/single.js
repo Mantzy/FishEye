@@ -16,15 +16,29 @@ fetch("./FishEyeData.json")
 
         let photolist = document.getElementById('img-listing');
         photos.forEach((media) => {
-            let tags = '';
-            media.tags.forEach((tag) => {
-                tags += `<li class="nav-tag">#${tag}</li>`
-            })
-            let card = `
+            if (id == media.photographerId) {
+
+                let tags = '';
+                media.tags.forEach((tag) => {
+                    tags += `<li class="nav-tag">#${tag}</li>`
+                })
+
+                let mediafile = "";
+
+                if (media.image == null) {
+                    mediafile = `<video class="list-img" controls>
+                       <source src="/SamplePhotos/${media.photographerId}/${media.video}" type="video/mp4">
+                     </video>`
+                } else {
+                    mediafile = `<img src="/SamplePhotos/${media.photographerId}/${media.image}" class="list-img"></img>`
+                }
+
+                let card = `
             <!-- photo card start-->
             <div class="photo-card">
                 <figure class="photo-list">
-                    <img src="/SamplePhotos/Mimi/${media.image}" class="list-img">
+           ${mediafile}
+            
                 </figure>
                 <section class="photo-infos">
                     <div class="img-title">
@@ -45,7 +59,14 @@ fetch("./FishEyeData.json")
         `;
 
 
-            photolist.innerHTML += card;
+                photolist.innerHTML += card;
+
+
+                /*    let dailyprice = document.getElementById('price');
+            let bottomprice = `<div class="likes bottom">297 081 <img src="/img/hearth-black.png"></div>
+<div class="prices bottom" id="bottom-price">$ ${ photog.price}  /day</div>`;
+            dailyprice.innerHTML += bottomprice;*/
+            }
         })
 
     })

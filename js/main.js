@@ -20,7 +20,7 @@ fetch("./FishEyeData.json")
             let card = `
         <!-- photographer card start-->
        <div class="photog-card">
-            <a href="photographer-page.html?id= + ${photographers.id} +" class="photog-page-link">
+            <a href="photographer-page.html?id=${photographers.id}" class="photog-page-link">
                 <div class="photog-link">
                     <figure class="thumbnail">
                         <img src="./SamplePhotos/Photographers/${photographers.portrait}" class="thumbnail-img">
