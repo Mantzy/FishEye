@@ -62,6 +62,8 @@ fetch("./FishEyeData.json")
                 photolist.innerHTML += card;
 
 
+                let photographer = document.getElementById("photog-info");
+
                 /*    let dailyprice = document.getElementById('price');
             let bottomprice = `<div class="likes bottom">297 081 <img src="/img/hearth-black.png"></div>
 <div class="prices bottom" id="bottom-price">$ ${ photog.price}  /day</div>`;

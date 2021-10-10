@@ -205,11 +205,13 @@ footer {
 
 .list-img {
     max-width: 350px;
-    margin-top: -50px;
+    /*  margin-top: -50px;*/
+    min-height: 300px;
 }
 
 .photo-infos {
     display: flex;
+    padding: 0px 35px;
 }
 
 .likes {
