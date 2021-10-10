@@ -13,7 +13,7 @@ fetch("./FishEyeData.json")
         var photog = data.photographers;
         var photos = data.media;
 
-
+        // photos list part
         let photolist = document.getElementById('img-listing');
         photos.forEach((media) => {
             if (id == media.photographerId) {
@@ -62,8 +62,6 @@ fetch("./FishEyeData.json")
                 photolist.innerHTML += card;
 
 
-                let photographer = document.getElementById("photog-info");
-
                 /*    let dailyprice = document.getElementById('price');
             let bottomprice = `<div class="likes bottom">297 081 <img src="/img/hearth-black.png"></div>
 <div class="prices bottom" id="bottom-price">$ ${ photog.price}  /day</div>`;
@@ -71,4 +69,42 @@ fetch("./FishEyeData.json")
             }
         })
 
+        // photgrapher info part 
+        let photographer = document.getElementById("photog-info");
+        photog.forEach((photographers) => {
+            if (id == photographers.id) {
+
+                let tags = '';
+                photographers.tags.forEach((tag) => {
+                    tags += `<li class="nav-tag">#${tag}</li>`
+                })
+
+                let photoginfo = `
+        <div id="personal-info">
+        <h1>${photographers.name}</h1>
+        <section id="about">
+            <address>${photographers.city}, ${photographers.country}</address>
+            <p id="desc">${photographers.tagline}</p>
+            <div class="photog-tags">
+                <ul>
+                ${tags}
+                </ul>
+            </div>
+        </section>
+    </div>
+    <div id="contact">
+        <button class="modal-btn">Contact me</button>
+    </div>
+    <figure class="thumbnail infopage">
+        <img src="./SamplePhotos/Photographers/${photographers.portrait}" class="thumbnail-img">
+
+    </figure>
+        `;
+
+                photographer.innerHTML += photoginfo;
+            }
+
+
+
+        })
     })
