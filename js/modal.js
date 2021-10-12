@@ -6,7 +6,7 @@ const modalClose = document.querySelectorAll(".close");
 //const modalSuc = document.querySelectorAll(".bgSubmit");
 
 const modalPicture = document.getElementById("single-img");
-const modalPictureCard = document.getElementById("photo-card");
+//const modalPictureCard = document.getElementByClass("photo-card");
 const modalCloseDark = document.getElementById("dark-color-close");
 
 
@@ -37,9 +37,9 @@ modalSucClose.addEventListener("click", function() {
 
 
 //single picture
-modalPictureCard.addEventListener("click", function() {
+/*modalPictureCard.addEventListener("click", function() {
     modalPicture.style.display = "block";
-});
+});*/
 
 modalPicture.addEventListener("click", function() {
     modalPicture.style.display = "block";
@@ -49,3 +49,35 @@ modalPicture.addEventListener("click", function() {
 modalCloseDark.addEventListener("click", function() {
     modalPicture.style.display = "none";
 });
+
+
+function popupPhoto(id, media) {
+    let popupImg = document.getElementById("popupImg");
+    popupImg.src = `/SamplePhotos/${id}/${media}`;
+    modalPicture.style.display = "block";
+
+    /*  let popup = `
+      <!-- single photo page start -->
+      <div class="single-img-container" id="single-img">
+
+          <div class="single-img-bg">
+              <span class="dark-color-close" id="dark-color-close"></span>
+              <div class="previous">
+                  <img src="/img/previous.png">
+              </div>
+              <div class="single-photo">
+                  <img src="c" class="single-img">
+              </div>
+              <div class="next">
+
+                  <img src="/img/next.png">
+              </div>
+          </div>
+
+      </div>
+      <!-- single photo page end -->`;*/
+
+
+    alert(media);
+
+}

@@ -33,7 +33,7 @@
         <!--- Header end-->
         <!-- main content start-->
 
-        <div class="main">
+        <div class="main" id="main">
             <!-- photographer information start-->
             <div class="photog-info" id="photog-info">
 
@@ -43,9 +43,22 @@
             <!-- photo ordering start-->
             <div id="photo-order">
                 <div>
-                    <p>Order by</p>
+                    <label for="orderby">Order by: </label>
                 </div>
-                <div><button class="pop-btn">Popularity</button></div>
+                <select name="order" id="order" class="pop-btn">
+                    <option value="popularity">Popularity</option>
+                    <option value="date">Date</option>
+                    <option value="title">Title</option>
+                  </select>
+                <div class="dropdown">
+                    <button class="pop-btn dropbtn">Popularity</button>
+
+                    <div class="dropdown-content">
+                        <a href="#">Date</a>
+
+                        <a href="#">Title</a>
+                    </div>
+                </div>
 
             </div>
 
@@ -62,73 +75,40 @@
             </div>
             <!-- price and likes end-->
             <!-- contact form start-->
-            <div class="bground">
-                <div class="content">
-                    <div class="modal-body">
-                        <div class="contact-text">
-                            <h1>
-                                Contact me<br> Mimi Keller</h1>
-                        </div>
-                        <span class="close"></span>
+            <div class="bground" id="bground">
 
+            </div>
+            <!-- contact form end-->
+            <!-- single photo page start -->
+            <div class="single-img-container" id="single-img">
 
-
-                        <form name="contact" action="index.html" method="get" onsubmit="return validate();">
-                            <div class="formData">
-                                <label for="first">First Name</label><br>
-                                <input class="text-control" type="text" id="first" name="first" minlength="2" required/><br>
-                                <div class="error" id="firstError"></div>
-                            </div>
-                            <div class="formData">
-                                <label for="last">Last Name</label><br>
-                                <input class="text-control" type="text" id="last" name="last" minlength="2" required/><br>
-                                <div class="error" id="lastError"></div>
-                            </div>
-                            <div class="formData">
-                                <label for="email">Email</label><br>
-                                <input class="text-control" type="email" id="email" name="email" required/><br>
-                                <div class="error" id="mailError"></div>
-                            </div>
-                            <div class="formData">
-                                <label for="message">Your message</label><br>
-                                <textarea class="text-control-message" name="message" rows="10" cols="30" id="message" type="text"></textarea>
-                            </div>
-
-
-                            <button class="btn-submit button" type="submit" value="Send">Send</button>
+                <div class="single-img-bg">
+                    <span class="dark-color-close" id="dark-color-close"></span>
+                    <div class="previous">
+                        <img src="/img/previous.png">
                     </div>
+                    <div class="single-photo">
+                        <img src="" class="single-img" id="popupImg">
+                    </div>
+                    <div class="next">
 
-                    </form>
+                        <img src="/img/next.png">
+                    </div>
                 </div>
+
             </div>
+            <!-- single photo page end -->
         </div>
-        <!-- contact form end-->
-        <!-- single photo page start -->
-        <div class="single-img-container" id="single-img">
 
-            <div class="single-img-bg">
-                <span class="dark-color-close" id="dark-color-close"></span>
-                <div class="previous">
-                    <img src="/img/previous.png">
-                </div>
-                <div class="single-photo">
-                    <img src="/SamplePhotos/Mimi/Animals_Rainbow.jpg" class="single-img">
-                </div>
-                <div class="next">
 
-                    <img src="/img/next.png">
-                </div>
-            </div>
-
-        </div>
-        <!-- single photo page end -->
     </div>
     <!-- main content end-->
     <!--- Footer start-->
     <footer>
     </footer>
-    <script src="js/modal.js" type="text/javascript"></script>
+
     <script src="js/single.js" type="text/javascript"></script>
+    <script src="js/modal.js" type="text/javascript"></script>
     <!--- Footer end-->
     </div>
     <!--- wrapper end-->
