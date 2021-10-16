@@ -40,7 +40,7 @@ fetch("./FishEyeData.json")
 
                 let card = `
             <!-- photo card start-->
-            <a href="#" onclick="popupPhoto(${media.photographerId}, '${_mediafile}')"><div class="photo-card">
+            <a href="#" onclick="popupPhoto(${media.photographerId}, '${_mediafile}')" class="photo-card-link"><div class="photo-card">
                 <figure class="photo-list">
            ${mediafile}
             

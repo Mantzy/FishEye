@@ -78,6 +78,12 @@ function popupPhoto(id, media) {
       <!-- single photo page end -->`;*/
 
 
-    alert(media);
+
 
 }
+
+modalCloseDark.onclick = function() {
+    modalPicture.style.display = "none";
+}
+
+//next previous button
