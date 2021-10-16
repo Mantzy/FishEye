@@ -59,7 +59,19 @@
                         <a href="#">Title</a>
                     </div>
                 </div>
-
+                <div class="filterContainer">
+                    <div class="filterBox">
+                        <label class="orderBy" for="myChoise">Order by</label>
+                        <div class="custom-select">
+                            <select id="myChoise" name="selections" role="listbox" tabindex="0"> 
+                          <option value="0" role="option" tabindex="0">Popularity</option>
+                          <option value="0" role="option" tabindex="0">Popularity</option>
+                          <option value="1" role="option" tabindex="0">Date</option>
+                          <option value="2" role="option" tabindex="0">Title</option>
+                        </select>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- photo ordering end-->
@@ -83,7 +95,7 @@
             <div class="single-img-container" id="single-img">
 
                 <div class="single-img-bg">
-                    <span class="dark-color-close" id="dark-color-close"></span>
+                    <span class="dark-color-close" id="dark-color-close" onclick="closeDark()"></span>
                     <div class="previous">
                         <img src="/img/previous.png">
                     </div>

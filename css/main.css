@@ -480,7 +480,7 @@ input {
 }
 
 .single-img {
-    margin-top: -20%;
+    /* margin-top: -20%;*/
     max-width: 100%;
 }
 
@@ -488,6 +488,7 @@ input {
     max-width: 1050px;
     max-height: 900px;
     overflow: hidden;
+    padding: 15px 15px;
 }
 
 .dark-color-close {
@@ -528,4 +529,36 @@ input {
 
 .single-photo {
     flex-grow: 10;
+}
+
+
+/* Dropdown menu */
+
+.filterContainer {
+    height: auto;
+}
+
+.filterBox {
+    display: flex;
+    position: relative;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.orderBy {
+    margin-left: 10px;
+    margin-right: 10px;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 18px;
+}
+
+.custom-select {
+    width: 120px;
+    position: relative;
+}
+
+.custom-select select {
+    display: none;
 }
