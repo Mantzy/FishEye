@@ -530,35 +530,3 @@ input {
 .single-photo {
     flex-grow: 10;
 }
-
-
-/* Dropdown menu */
-
-.filterContainer {
-    height: auto;
-}
-
-.filterBox {
-    display: flex;
-    position: relative;
-    align-items: center;
-    margin-top: 20px;
-    margin-bottom: 40px;
-}
-
-.orderBy {
-    margin-left: 10px;
-    margin-right: 10px;
-    font-weight: 700;
-    font-style: normal;
-    font-size: 18px;
-}
-
-.custom-select {
-    width: 120px;
-    position: relative;
-}
-
-.custom-select select {
-    display: none;
-}
