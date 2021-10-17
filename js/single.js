@@ -3,22 +3,23 @@ const id = urlParams.get('id');
 var request = new XMLHttpRequest();
 
 //const photographer = db['photographers'].find(x => x.id === photographerId);
-
+var photog = [];
+var photos = [];
 fetch("./FishEyeData.json")
     .then(response => response.json())
     .then(data => {
 
         console.log(data);
 
-        var photog = data.photographers;
-        var photos = data.media;
+        photog = data.photographers;
+        photos = data.media;
 
 
 
 
         // photos list part
         let photolist = document.getElementById('img-listing');
-        photos.forEach((media) => {
+        photos.forEach((media, index) => {
             if (id == media.photographerId) {
 
                 let tags = '';
@@ -40,7 +41,7 @@ fetch("./FishEyeData.json")
 
                 let card = `
             <!-- photo card start-->
-            <a href="#" onclick="popupPhoto(${media.photographerId}, '${_mediafile}')" class="photo-card-link"><div class="photo-card">
+            <a href="#" onclick="popupPhoto(${media.photographerId}, '${_mediafile}', ${index})" class="photo-card-link"><div class="photo-card">
                 <figure class="photo-list">
            ${mediafile}
             

@@ -1,3 +1,6 @@
+const modalPicture = document.getElementById("single-img");
+//const modalPictureCard = document.getElementByClass("photo-card");
+const modalCloseDark = document.getElementById("dark-color-close");
 setTimeout(function() {
 
 
@@ -50,17 +53,18 @@ setTimeout(function() {
     //close single picture
     modalCloseDark.addEventListener("click", function() {
         modalPicture.style.display = "none";
+        alert("alert");
     });
 }, 500);
 
-const modalPicture = document.getElementById("single-img");
-//const modalPictureCard = document.getElementByClass("photo-card");
-const modalCloseDark = document.getElementById("dark-color-close");
 
 
-function popupPhoto(id, media) {
+
+function popupPhoto(id, media, index) {
     let popupImg = document.getElementById("popupImg");
     popupImg.src = `/SamplePhotos/${id}/${media}`;
+    popupImg.setAttribute("data-index", index);
+    popupImg.setAttribute("data-photographerid", id);
     modalPicture.style.display = "block";
 
     /*  let popup = `
@@ -98,3 +102,43 @@ function closeDark() {
 }
 
 //next previous button
+let nextButton = document.getElementById("next");
+let previousButton = document.getElementById("previous");
+
+nextButton.addEventListener("click", function() {
+    moveForward()
+});
+
+previousButton.addEventListener("click", function() {
+    moveBackward()
+});
+
+
+function moveForward() {
+
+    let image = document.getElementById("popupImg");
+    let index = parseInt(image.getAttribute("data-index"));
+    let photographerId = parseInt(image.getAttribute("data-photographerid"));
+
+    let media = {};
+    for (let i = index + 1; i < photos.length; i++) {
+        console.log(index, photos.length);
+        let currentMedia = photos[i];
+        if (currentMedia.photographerId == photographerId) {
+            media = currentMedia;
+            image.src = `/SamplePhotos/${photographerId}/${media.image}`;
+            image.setAttribute("data-index", i);
+            break;
+        }
+        if (i == photos.length - 1) {
+            nextButton.style.display = "none";
+            console.log(index + 1, photos.length);
+        }
+    }
+
+
+}
+
+function moveBackward() {
+    alert("backward")
+}
