@@ -194,6 +194,15 @@ footer {
     margin: auto;
 }
 
+.totalLikes {
+    text-align: left !important;
+    padding-left: 15px;
+}
+
+.hearthLikes {
+    margin-bottom: -5px;
+}
+
 
 /* photo list */
 
@@ -206,6 +215,7 @@ footer {
     max-height: 300px;
     border-radius: 5px;
     overflow: hidden;
+    cursor: pointer;
 }
 
 .list-img {
@@ -237,7 +247,6 @@ footer {
 
 .photo-card {
     /* width: 30%;*/
-    cursor: pointer;
 }
 
 
@@ -525,6 +534,7 @@ input {
     flex-grow: 1;
     text-align: center;
     margin: auto;
+    cursor: pointer;
 }
 
 .single-photo {

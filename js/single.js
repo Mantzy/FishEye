@@ -20,39 +20,40 @@ fetch("./FishEyeData.json")
         // photos list part
         let photolist = document.getElementById('img-listing');
         photos.forEach((media, index) => {
-            if (id == media.photographerId) {
+                if (id == media.photographerId) {
 
-                let tags = '';
-                media.tags.forEach((tag) => {
-                    tags += `<li class="nav-tag">#${tag}</li>`
-                })
+                    let tags = '';
+                    media.tags.forEach((tag) => {
+                        tags += `<li class="nav-tag">#${tag}</li>`
+                    })
 
-                let mediafile = "";
-                let _mediafile = "";
-                if (media.image == null) {
-                    _mediafile = media.video;
-                    mediafile = `<video class="list-img" controls>
+                    let mediafile = "";
+                    let _mediafile = "";
+                    if (media.image == null) {
+                        _mediafile = media.video;
+                        mediafile = `<video class="list-img" controls>
                        <source src="/SamplePhotos/${media.photographerId}/${media.video}" type="video/mp4">
                      </video>`
-                } else {
-                    _mediafile = media.image;
-                    mediafile = `<img src="/SamplePhotos/${media.photographerId}/${media.image}" class="list-img"></img>`
-                }
+                    } else {
+                        _mediafile = media.image;
+                        mediafile = `<img src="/SamplePhotos/${media.photographerId}/${media.image}" class="list-img"></img>`
+                    }
 
-                let card = `
+                    let card = `
             <!-- photo card start-->
-            <a href="#" onclick="popupPhoto(${media.photographerId}, '${_mediafile}', ${index})" class="photo-card-link"><div class="photo-card">
+            <div class="photo-card">
+            <a href="#" onclick="popupPhoto(${media.photographerId}, '${_mediafile}', ${index})" class="photo-card-link">
                 <figure class="photo-list">
            ${mediafile}
             
-                </figure>
+                </figure></a>
                 <section class="photo-infos">
                     <div class="img-title">
                        ${media.title}
                     </div>
-                    <div class="likes">${media.likes} <img src="/img/hearth.png"></div>
+                    <div class="likes">${media.likes} <img src="/img/hearth.png" class="hearthLikes"></div>
                 </section>
-            </div></a>
+            </div>
             <!-- photo card end-->.
             </section>
 
@@ -64,16 +65,24 @@ fetch("./FishEyeData.json")
 
 
 
-                photolist.innerHTML += card;
+
+                    photolist.innerHTML += card;
 
 
 
 
 
-            }
+                }
 
 
-        })
+            })
+            /*
+                    var photoLikes = document.getElementsByClassName("likes");
+                    photoLikes.addEventListener("click", function() {
+                        media.likes += 1;
+                    });*/
+
+        // count total likes
         let totalLikes = 0;
         photos.forEach((media) => {
             if (id == media.photographerId) {
@@ -155,10 +164,11 @@ fetch("./FishEyeData.json")
                 <div class="formData">
                     <label for="message">Your message</label><br>
                     <textarea class="text-control-message" name="message" rows="10" cols="30" id="message" type="text"></textarea>
-                </div>
+                    <div class="error" id="messageError"></div>
+                    </div>
 
 
-                <button class="btn-submit button" type="submit" value="Send">Send</button>
+                <button class="btn-submit button" type="submit" id="submit-success"  value="Send">Send</button>
         </div>
 
         </form>
@@ -168,7 +178,7 @@ fetch("./FishEyeData.json")
 
 
                 let pricelike = `
-        <div class="likes bottom"> ${totalLikes} <img src="/img/hearth-black.png"></div>
+        <div class="likes bottom totalLikes"> ${totalLikes} <img src="/img/hearth-black.png" class="hearthLikes"></div>
         <div class="prices bottom">$ ${ photographers.price} /day</div>
         `;
 

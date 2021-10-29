@@ -11,7 +11,7 @@ setTimeout(function() {
     const modalBtn = document.querySelectorAll(".modal-btn");
     const formData = document.querySelectorAll(".formData");
     const modalClose = document.querySelectorAll(".close");
-    //const modalSuc = document.querySelectorAll(".bgSubmit");
+
 
 
 
@@ -32,13 +32,6 @@ setTimeout(function() {
 
     }
 
-    /*modalSucBtn.addEventListener("click", function() {
-        setTimeout(function() { window.location.reload(); }, 2)
-    })
-
-    modalSucClose.addEventListener("click", function() {
-        setTimeout(function() { window.location.reload(); }, 2)
-    })*/
 
 
     //single picture
@@ -140,5 +133,22 @@ function moveForward() {
 }
 
 function moveBackward() {
-    alert("backward")
+    // alert("backward")
+    let image = document.getElementById("popupImg");
+    let index = parseInt(image.getAttribute("data-index"));
+    let photographerId = parseInt(image.getAttribute("data-photographerid"));
+
+    let media = {};
+    for (let i = index + 1; i < photos.length; i++) {
+
+        let currentMedia = photos[i];
+        let previousMedia = photos[i - 1];
+        if (currentMedia.photographerId == photographerId) {
+            media = previousMedia;
+            image.src = `/SamplePhotos/${photographerId}/${media.image}`;
+            image.setAttribute("data-index", i);
+            break;
+        }
+
+    }
 }
