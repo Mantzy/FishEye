@@ -64,7 +64,6 @@ fetch("./FishEyeData.json")
 
 
 
-
                 photolist.innerHTML += card;
 
 
@@ -75,6 +74,13 @@ fetch("./FishEyeData.json")
 
 
         })
+        let totalLikes = 0;
+        photos.forEach((media) => {
+            if (id == media.photographerId) {
+                totalLikes += media.likes;
+                console.log(totalLikes);
+            }
+        });
 
 
 
@@ -85,6 +91,9 @@ fetch("./FishEyeData.json")
         let photogcontact = document.getElementById("bground");
         photog.forEach((photographers) => {
             if (id == photographers.id) {
+
+
+
 
                 let tags = '';
                 photographers.tags.forEach((tag) => {
@@ -159,7 +168,7 @@ fetch("./FishEyeData.json")
 
 
                 let pricelike = `
-        <div class="likes bottom">  <img src="/img/hearth-black.png"></div>
+        <div class="likes bottom"> ${totalLikes} <img src="/img/hearth-black.png"></div>
         <div class="prices bottom">$ ${ photographers.price} /day</div>
         `;
 
