@@ -474,7 +474,8 @@ input {
     width: 100%;
     height: 100%;
     background-color: white;
-    display: none;
+    /*display: none;*/
+    /*visibility: hidden;*/
 }
 
 .single-img-bg {
@@ -539,4 +540,12 @@ input {
 
 .single-photo {
     flex-grow: 10;
+}
+
+.show {
+    visibility: visible;
+}
+
+.hide {
+    visibility: hidden;
 }

@@ -1,4 +1,5 @@
-const modalPicture = document.getElementById("single-img");
+const modalPicture = document.getElementById("single-img-id");
+
 //const modalPictureCard = document.getElementByClass("photo-card");
 const modalCloseDark = document.getElementById("dark-color-close");
 setTimeout(function() {
@@ -40,13 +41,23 @@ setTimeout(function() {
     });*/
 
     modalPicture.addEventListener("click", function() {
-        modalPicture.style.display = "block";
+        modalPicture.classList.remove("hide");
+        modalPicture.classList.add("show");
+
     });
 
     //close single picture
     modalCloseDark.addEventListener("click", function() {
-        modalPicture.style.display = "none";
-        alert("alert");
+        // modalPicture.style.display = "none";
+        modalPicture.classList.remove("show");
+
+        //  let closePicture = document.getElementsByClassName("single-img-container");
+        modalPicture.classList.add("hide");
+        //closePicture.classList.remove("show");
+        //closePicture.classList.add("hide");
+
+
+        //alert("alert");
     });
 }, 500);
 
@@ -58,7 +69,9 @@ function popupPhoto(id, media, index) {
     popupImg.src = `/SamplePhotos/${id}/${media}`;
     popupImg.setAttribute("data-index", index);
     popupImg.setAttribute("data-photographerid", id);
-    modalPicture.style.display = "block";
+    // modalPicture.style.display = "block";
+    modalPicture.classList.remove("hide");
+    modalPicture.classList.add("show");
 
     /*  let popup = `
       <!-- single photo page start -->
@@ -86,13 +99,7 @@ function popupPhoto(id, media, index) {
 
 }
 
-modalCloseDark.onclick = function() {
-    modalPicture.style.display = "none";
-}
 
-function closeDark() {
-    modalPicture.style.display = "none";
-}
 
 //next previous button
 let nextButton = document.getElementById("next");
@@ -115,6 +122,7 @@ function moveForward() {
 
     let media = {};
     for (let i = index + 1; i < photos.length; i++) {
+        previousButton.style.display = "block";
         console.log(index, photos.length);
         let currentMedia = photos[i];
         if (currentMedia.photographerId == photographerId) {
@@ -133,21 +141,25 @@ function moveForward() {
 }
 
 function moveBackward() {
-    // alert("backward")
+    //alert("backward")
     let image = document.getElementById("popupImg");
     let index = parseInt(image.getAttribute("data-index"));
     let photographerId = parseInt(image.getAttribute("data-photographerid"));
 
     let media = {};
-    for (let i = index + 1; i < photos.length; i++) {
-
+    for (let i = index - 1; i >= 0; i--) {
+        //alert(i);
+        nextButton.style.display = "block";
         let currentMedia = photos[i];
-        let previousMedia = photos[i - 1];
+        //  let previousMedia = currentMedia.index - 1;
         if (currentMedia.photographerId == photographerId) {
-            media = previousMedia;
+            media = currentMedia;
             image.src = `/SamplePhotos/${photographerId}/${media.image}`;
             image.setAttribute("data-index", i);
             break;
+        }
+        if (i == 0) {
+            previousButton.style.display = "none";
         }
 
     }
