@@ -40,16 +40,17 @@ setTimeout(function() {
         modalPicture.style.display = "block";
     });*/
 
-    modalPicture.addEventListener("click", function() {
+    /*modalPicture.addEventListener("click", function() {
         modalPicture.classList.remove("hide");
-        modalPicture.classList.add("show");
+        modalPicture.classList.add("display");
+        alert("popup");
 
-    });
+    });*/
 
     //close single picture
     modalCloseDark.addEventListener("click", function() {
         // modalPicture.style.display = "none";
-        modalPicture.classList.remove("show");
+        modalPicture.classList.remove("display");
 
         //  let closePicture = document.getElementsByClassName("single-img-container");
         modalPicture.classList.add("hide");
@@ -63,37 +64,32 @@ setTimeout(function() {
 
 
 
-
+//single photos
 function popupPhoto(id, media, index) {
+
+
+    modalPicture.classList.remove("hide");
+    modalPicture.classList.add("display");
     let popupImg = document.getElementById("popupImg");
+
     popupImg.src = `/SamplePhotos/${id}/${media}`;
     popupImg.setAttribute("data-index", index);
     popupImg.setAttribute("data-photographerid", id);
+
     // modalPicture.style.display = "block";
-    modalPicture.classList.remove("hide");
-    modalPicture.classList.add("show");
 
-    /*  let popup = `
-      <!-- single photo page start -->
-      <div class="single-img-container" id="single-img">
 
-          <div class="single-img-bg">
-              <span class="dark-color-close" id="dark-color-close"></span>
-              <div class="previous">
-                  <img src="/img/previous.png">
-              </div>
-              <div class="single-photo">
-                  <img src="c" class="single-img">
-              </div>
-              <div class="next">
-
-                  <img src="/img/next.png">
-              </div>
-          </div>
-
-      </div>
-      <!-- single photo page end -->`;*/
-
+    /*if (media == null) {
+        console.log("video");
+        popupImg.src = `/SamplePhotos/${id}/${video}`;
+        popupImg.setAttribute("data-index", index);
+        popupImg.setAttribute("data-photographerid", id);
+    } else {
+        popupImg.src = `/SamplePhotos/${id}/${media}`;
+        popupImg.setAttribute("data-index", index);
+        popupImg.setAttribute("data-photographerid", id);
+    }
+*/
 
 
 
@@ -101,7 +97,7 @@ function popupPhoto(id, media, index) {
 
 
 
-//next previous button
+//next button
 let nextButton = document.getElementById("next");
 let previousButton = document.getElementById("previous");
 
@@ -140,6 +136,7 @@ function moveForward() {
 
 }
 
+//previous button
 function moveBackward() {
     //alert("backward")
     let image = document.getElementById("popupImg");

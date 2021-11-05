@@ -471,9 +471,11 @@ input {
 /* single image */
 
 .single-img-container {
-    width: 100%;
+    margin: auto;
+    width: 80%;
     height: 100%;
     background-color: white;
+    position: absolute;
     /*display: none;*/
     /*visibility: hidden;*/
 }
@@ -481,10 +483,10 @@ input {
 .single-img-bg {
     background-color: white;
     display: flex;
-    position: absolute;
     width: 90%;
     height: 100%;
     top: 40px;
+    position: absolute;
     /* border: 2px solid #95FFF9;*/
     box-sizing: border-box;
 }
@@ -492,6 +494,7 @@ input {
 .single-img {
     /* margin-top: -20%;*/
     max-width: 100%;
+    max-height: 900px;
 }
 
 .single-photo {
@@ -499,6 +502,7 @@ input {
     max-height: 900px;
     overflow: hidden;
     padding: 15px 15px;
+    text-align: center;
 }
 
 .dark-color-close {
@@ -543,9 +547,15 @@ input {
 }
 
 .show {
-    visibility: visible;
+    /* visibility: visible;*/
+    /* display: block;*/
 }
 
 .hide {
-    visibility: hidden;
+    /*visibility: hidden;*/
+    display: none;
+}
+
+.display {
+    display: block;
 }

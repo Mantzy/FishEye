@@ -27,8 +27,8 @@ fetch("./FishEyeData.json")
                         tags += `<li class="nav-tag">#${tag}</li>`
                     })
 
-                    let mediafile = "";
-                    let _mediafile = "";
+                    var mediafile = "";
+                    var _mediafile = "";
                     if (media.image == null) {
                         _mediafile = media.video;
                         mediafile = `<video class="list-img" controls>
@@ -87,7 +87,7 @@ fetch("./FishEyeData.json")
         photos.forEach((media) => {
             if (id == media.photographerId) {
                 totalLikes += media.likes;
-                console.log(totalLikes);
+                // console.log(totalLikes);
             }
         });
 
